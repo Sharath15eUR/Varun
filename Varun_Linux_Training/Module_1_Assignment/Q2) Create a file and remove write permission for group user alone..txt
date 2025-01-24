@@ -1,0 +1,7 @@
+Q2) Create a file and remove write permission for group user alone.
+
+
+Commands: touch ans2.txt | chmod 644 ans2.txt | ls -l ans2.txt
+
+Terminal Output:
+	  -rw-r--r-- 1 varun varun 217 Jan 24 21:51 ans2.txt

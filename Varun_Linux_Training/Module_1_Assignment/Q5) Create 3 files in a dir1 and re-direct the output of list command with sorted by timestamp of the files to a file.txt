@@ -1,0 +1,13 @@
+Q5) Create 3 files in a dir1 and re-direct the output of list command with sorted by timestamp of the files to a file
+
+Command:
+	mkdir -p dir1 | touch dir1/file1 dir1/file2 dir1/file3 | ls -lt dir1 > dir1/sorted_list.txt | open sorted_list.txt
+
+Terminal Output:
+	total 4
+	-rw-rw-r-- 1 varun varun    0 Jan 24 22:11 file1
+	-rw-rw-r-- 1 varun varun    0 Jan 24 22:11 file2
+	-rw-rw-r-- 1 varun varun    0 Jan 24 22:11 file3
+	-rw-rw-r-- 1 varun varun    0 Jan 24 22:11 sorted_list.txt
+	lrwxrwxrwx 1 varun varun    9 Jan 24 22:00 file_link -> dir2/file
+	drwxrwxr-x 2 varun varun 4096 Jan 24 22:00 dir2

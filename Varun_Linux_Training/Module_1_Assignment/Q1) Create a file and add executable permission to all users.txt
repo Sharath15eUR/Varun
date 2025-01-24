@@ -1,0 +1,8 @@
+Q1) Create a file and add executable permission to all users (user, group and others)
+
+Commands: touch ans1.txt
+	  chmod +111 ans1.txt
+	  
+Output in the terminal:
+	total 4
+	-rwxrwxr-x 1 varun varun 57 Jan 24 21:36 ans1.txt
