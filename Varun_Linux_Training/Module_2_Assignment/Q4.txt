@@ -1,0 +1,7 @@
+Q4) Write a code to identify the process with the highest memory usage and then terminate it.
+
+Commands:
+	ps aux --sort=-%mem
+	kill 4618
+	
+Terminal Outputs: (refer to the screenshot attached)

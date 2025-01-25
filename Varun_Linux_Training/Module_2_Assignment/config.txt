@@ -1,0 +1,6 @@
+localhost____1		localhost____2
+localhost____3		localhost____4
+localhost____5		localhost____6
+foreignhost__1		foreignhost__2
+foreignhost__3		foreignhost__4
+

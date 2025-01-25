@@ -1,0 +1,11 @@
+Q1) Use the appropriate command to list all files larger than 1 MB in the current directory and save the output to a file.
+
+Commands: 
+	ls -l | awk '$5 > 1048576{print $5 "\t" $9}' > output.txt
+	cat output.txt
+
+Terminal Outputs:
+	3919848	End
+	16912605	MicroBlaze_Sample.mp4
+	2076656	Tanjiro-Waterfall-Serenity-Demon-Slayer-Wallpaper-4k.jpg
+	1530731632	The_GodFather.mkv

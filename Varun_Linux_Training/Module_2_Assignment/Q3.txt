@@ -1,0 +1,10 @@
+Q3)Use the appropriate command to search for lines containing the word "ERROR" in a log file but exclude lines containing "DEBUG". Save the results to a file named filtered_log.txt
+
+Commands:
+	nano log.txt | cat log.txt
+	grep "ERROR" log.txt | grep -v "DEBUG" > filtered_log.txt
+	
+Terminal Output: 
+	ERROR: Unable to connect to the database.
+	ERROR: Failed to fetch data from API endpoint '/users'.
+	ERROR: Missing required parameter in the request.

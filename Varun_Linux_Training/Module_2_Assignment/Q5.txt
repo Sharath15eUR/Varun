@@ -1,0 +1,9 @@
+Q5) Use the networking tool command and print all the gateway available in a sorted manner
+
+Commands: 
+	netstat -rn | awk 'NR>=3{(print $2)}'|sort -k 3
+	
+Terminal Outputs:
+	0.0.0.0
+	0.0.0.0
+	192.168.1.1
