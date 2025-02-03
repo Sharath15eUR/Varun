@@ -1,0 +1,11 @@
+[ERROR]: Keyword 'blossom' not found in file: sample.txt
+[ERROR]: Invalid option
+[ERROR]: Keyword 'squirrel' not found in directory: logs
+[ERROR]: Keyword cannot be empty.
+[ERROR]: Invalid option
+[ERROR]: Keyword cannot be empty.
+[ERROR]: Invalid option
+[ERROR]: Keyword cannot be empty.
+[ERROR]: Keyword 'silver' not found in file: sample.txt
+[ERROR]: Keyword 'silver' not found in directory: logs/inside_logs
+[ERROR]: Keyword 'silver' not found in directory: logs
