@@ -1,0 +1,48 @@
+puts and gets in ftp
+------------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_1/2$ ftp localhost
+Connected to localhost.
+220 (vsFTPd 3.0.5)
+Name (localhost:varun): varun
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> put sample.txt
+local: sample.txt remote: sample.txt
+229 Entering Extended Passive Mode (|||50940|)
+150 Ok to send data.
+100% |***************************************************************************************************************************************************************|   477       18.19 MiB/s    00:00 ETA
+226 Transfer complete.
+477 bytes sent in 00:00 (2.93 MiB/s)
+ftp> get sample.txt
+local: sample.txt remote: sample.txt
+229 Entering Extended Passive Mode (|||45922|)
+150 Opening BINARY mode data connection for sample.txt (477 bytes).
+100% |***************************************************************************************************************************************************************|   477        7.45 MiB/s    00:00 ETA
+226 Transfer complete.
+477 bytes received in 00:00 (1.23 MiB/s)
+ftp> bye
+221 Goodbye.
+
+
+
+puts and gets in sftp
+------------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_1/2$ sftp localhost
+
+varun@localhost's password: 
+Connected to localhost.
+
+sftp> get sample.txt
+Fetching /home/varun/sample.txt to sample.txt
+sample.txt                                                                                                                                                                100%  477   670.8KB/s   00:00    
+
+sftp> put sample.txt
+Uploading sample.txt to /home/varun/sample.txt
+sample.txt                                                                                                                                                                100%  477   649.8KB/s   00:00    
+
+sftp> bye
