@@ -1,0 +1,135 @@
+ping command:
+-----------------------------
+
+ping -s 10 google.com
+
+	PING google.com (142.250.205.238) 10(38) bytes of data.
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=1 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=2 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=3 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=4 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=5 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=6 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=7 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=8 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=9 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=10 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=11 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=12 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=13 ttl=117
+	18 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=14 ttl=117
+
+	--- google.com ping statistics ---
+	14 packets transmitted, 14 received, 0% packet loss, time 13015ms
+
+ping -c 3 youtube.com
+
+	PING youtube.com (142.250.195.206) 56(84) bytes of data.
+	64 bytes from maa03s42-in-f14.1e100.net (142.250.195.206): icmp_seq=1 ttl=58 time=25.7 ms
+	64 bytes from maa03s42-in-f14.1e100.net (142.250.195.206): icmp_seq=2 ttl=58 time=22.1 ms
+	64 bytes from maa03s42-in-f14.1e100.net (142.250.195.206): icmp_seq=3 ttl=58 time=24.0 ms
+	64 bytes from maa03s42-in-f14.1e100.net (142.250.195.206): icmp_seq=4 ttl=58 time=23.9 ms
+
+	--- youtube.com ping statistics ---
+	3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+	rtt min/avg/max/mdev = 25.115/25.526/26.218/0.491 ms
+	
+ping -a -c 4 facebook.com (Audible ping)
+
+	PING facebook.com (157.240.192.35) 56(84) bytes of data.
+	64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=1 ttl=56 time=27.4 ms
+	64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=2 ttl=56 time=26.3 ms
+	64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=3 ttl=56 time=49.1 ms
+	64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=4 ttl=56 time=22.6 ms
+
+	--- facebook.com ping statistics ---
+	4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+	rtt min/avg/max/mdev = 22.557/31.323/49.051/10.390 ms
+
+ping -t 110 -c 4 instagram.com (Define TTL as 110 ns)
+
+	PING instagram.com (163.70.139.174) 56(84) bytes of data.
+	64 bytes from instagram-p42-shv-02-tir3.fbcdn.net (163.70.139.174): icmp_seq=1 ttl=55 time=27.4 ms
+	64 bytes from instagram-p42-shv-02-tir3.fbcdn.net (163.70.139.174): icmp_seq=2 ttl=55 time=25.9 ms
+	64 bytes from instagram-p42-shv-02-tir3.fbcdn.net (163.70.139.174): icmp_seq=3 ttl=55 time=28.8 ms
+	64 bytes from instagram-p42-shv-02-tir3.fbcdn.net (163.70.139.174): icmp_seq=4 ttl=55 time=25.9 ms
+
+	--- instagram.com ping statistics ---
+	4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+	rtt min/avg/max/mdev = 25.884/26.990/28.782/1.193 ms
+
+ping -q google.com (Quiet ping)
+	
+	PING google.com (142.250.71.46) 56(84) bytes of data.
+	^C
+	--- google.com ping statistics ---
+	5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+	rtt min/avg/max/mdev = 26.439/28.832/33.029/2.290 ms
+
+
+
+arp command:
+--------------
+
+arp -e (display all hosts in Linux style)
+
+	Address                  HWtype  HWaddress           Flags Mask            Iface
+	_gateway                 ether   38:94:e0:f6:73:7e   C                     wlp0s20f3
+
+
+arp -n (don't resolve names)
+
+	Address                  HWtype  HWaddress           Flags Mask            Iface
+	192.168.1.1              ether   38:94:e0:f6:73:7e   C                     wlp0s20f3
+
+sudo arp -s 192.168.1.10 00:1a:2b:3c:4d:5e
+arp -n
+
+	Address                  HWtype  HWaddress           Flags Mask            Iface
+	192.168.1.1              ether   38:94:e0:f6:73:7e   C                     wlp0s20f3
+	192.168.1.10             ether   00:1a:2b:3c:4d:5e   CM                    wlp0s20f3
+
+sudo arp -d 192.168.1.10
+arp -e
+
+	Address                  HWtype  HWaddress           Flags Mask            Iface
+	192.168.1.1              ether   38:94:e0:f6:73:7e   C                     wlp0s20f3
+	
+
+ifconfig command:
+-------------------
+
+ifconfig -a
+
+	lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+		inet 127.0.0.1  netmask 255.0.0.0
+		inet6 ::1  prefixlen 128  scopeid 0x10<host>
+		loop  txqueuelen 1000  (Local Loopback)
+		RX packets 43852  bytes 4805111 (4.8 MB)
+		RX errors 0  dropped 0  overruns 0  frame 0
+		TX packets 43852  bytes 4805111 (4.8 MB)
+		TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+	wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+		inet 192.168.1.3  netmask 255.255.255.0  broadcast 192.168.1.255
+		inet6 fe80::75c4:c747:9aee:caea  prefixlen 64  scopeid 0x20<link>
+		ether dc:21:5c:86:05:01  txqueuelen 1000  (Ethernet)
+		RX packets 14560013  bytes 18943433890 (18.9 GB)
+		RX errors 0  dropped 0  overruns 0  frame 0
+		TX packets 1975655  bytes 351721114 (351.7 MB)
+		TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+ip a
+
+	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+	    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+	    inet 127.0.0.1/8 scope host lo
+	       valid_lft forever preferred_lft forever
+	    inet6 ::1/128 scope host 
+	       valid_lft forever preferred_lft forever
+	2: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+	    link/ether dc:21:5c:86:05:01 brd ff:ff:ff:ff:ff:ff
+	    inet 192.168.1.3/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp0s20f3
+	       valid_lft 86221sec preferred_lft 86221sec
+	    inet6 fe80::75c4:c747:9aee:caea/64 scope link noprefixroute 
+	       valid_lft forever preferred_lft forever
