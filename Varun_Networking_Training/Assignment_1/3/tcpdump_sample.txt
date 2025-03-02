@@ -1,0 +1,37 @@
+12:36:02.156800 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 78
+12:36:02.162958 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 33
+12:36:02.358402 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:02.385679 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:02.586488 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:02.614265 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:02.801322 IP varun-IdeaPad-5-15ITL05.48049 > multiplay.bsnl.in.domain: 14989+ [1au] PTR? 3.1.168.192.in-addr.arpa. (53)
+12:36:02.815062 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:02.827699 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.48049: 14989 NXDomain 0/1/1 (130)
+12:36:02.827962 IP varun-IdeaPad-5-15ITL05.48049 > multiplay.bsnl.in.domain: 14989+ PTR? 3.1.168.192.in-addr.arpa. (42)
+12:36:02.842709 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:02.851885 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.48049: 14989 NXDomain 0/1/0 (119)
+12:36:03.043537 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:03.071409 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:03.272284 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:03.300183 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:03.501042 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:03.528664 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:03.795615 ARP, Request who-has _gateway tell _gateway, length 46
+12:36:03.825455 IP varun-IdeaPad-5-15ITL05.57336 > multiplay.bsnl.in.domain: 2398+ [1au] PTR? 1.1.168.192.in-addr.arpa. (53)
+12:36:03.850512 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.57336: 2398 NXDomain 0/1/1 (130)
+12:36:03.850760 IP varun-IdeaPad-5-15ITL05.57336 > multiplay.bsnl.in.domain: 2398+ PTR? 1.1.168.192.in-addr.arpa. (42)
+12:36:03.874619 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.57336: 2398 NXDomain 0/1/0 (119)
+12:36:03.929645 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:03.955678 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:04.757140 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:04.785559 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:06.387238 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:06.414601 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
+12:36:07.792044 IP varun-IdeaPad-5-15ITL05.44228 > 104.18.32.47.https: Flags [.], ack 3265603589, win 411, options [nop,nop,TS val 3491632036 ecr 4099821523], length 0
+12:36:07.812289 IP 104.18.32.47.https > varun-IdeaPad-5-15ITL05.44228: Flags [.], ack 1, win 23, options [nop,nop,TS val 4099866578 ecr 3491447824], length 0
+12:36:07.921768 IP varun-IdeaPad-5-15ITL05.60610 > multiplay.bsnl.in.domain: 42863+ [1au] PTR? 47.32.18.104.in-addr.arpa. (54)
+12:36:07.950449 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.60610: 42863 NXDomain 0/1/1 (116)
+12:36:07.950711 IP varun-IdeaPad-5-15ITL05.60610 > multiplay.bsnl.in.domain: 42863+ PTR? 47.32.18.104.in-addr.arpa. (43)
+12:36:07.976047 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.60610: 42863 NXDomain 0/1/0 (105)
+12:36:09.618282 IP varun-IdeaPad-5-15ITL05.48052 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:36:09.646212 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.48052: UDP, length 25
