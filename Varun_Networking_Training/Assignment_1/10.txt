@@ -1,0 +1,36 @@
+Steps of DHCP Process:
+
+1. DHCP Discover
+	The client (your device) sends a broadcast request to find available DHCP servers.
+
+2. DHCP Offer
+	The DHCP server responds with an IP address offer to the client.
+
+3. DHCP Request
+	The client accepts the offer and requests the IP officially from the server.
+
+4. DHCP Acknowledgment (ACK)
+	The server confirms the IP lease and assigns the IP address to the client.
+
+5. DHCP Lease Table Verification
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_1$ sudo nmap --script broadcast-dhcp-discover
+
+	Starting Nmap 7.80 ( https://nmap.org ) at 2025-03-02 19:41 IST
+	Pre-scan script results:
+	| broadcast-dhcp-discover: 
+	|   Response 1 of 1: 
+	|     IP Offered: 192.168.10.241
+	|     DHCP Message Type: DHCPOFFER
+	|     Server Identifier: 192.168.10.95
+	|     IP Address Lease Time: 59m59s
+	|     Renewal Time Value: 29m59s
+	|     Rebinding Time Value: 52m29s
+	|     Subnet Mask: 255.255.255.0
+	|     Broadcast Address: 192.168.10.255
+	|     Router: 192.168.10.95
+	|     Domain Name Server: 192.168.10.95
+	|_    Vendor Specific Information: ANDROID_METERED
+	WARNING: No targets were specified, so 0 hosts scanned.
+	Nmap done: 0 IP addresses (0 hosts up) scanned in 0.18 seconds
+
