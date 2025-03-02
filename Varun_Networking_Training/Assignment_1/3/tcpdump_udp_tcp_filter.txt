@@ -1,0 +1,33 @@
+UDP Filter
+-------------
+
+12:45:41.559868 IP varun-IdeaPad-5-15ITL05.38297 > maa03s44-in-f10.1e100.net.https: UDP, length 29
+12:45:41.587471 IP maa03s44-in-f10.1e100.net.https > varun-IdeaPad-5-15ITL05.38297: UDP, length 25
+12:45:42.257641 IP varun-IdeaPad-5-15ITL05.36327 > multiplay.bsnl.in.domain: 54203+ [1au] PTR? 3.1.168.192.in-addr.arpa. (53)
+12:45:42.278935 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.36327: 54203 NXDomain 0/1/1 (130)
+12:45:42.279117 IP varun-IdeaPad-5-15ITL05.36327 > multiplay.bsnl.in.domain: 54203+ PTR? 3.1.168.192.in-addr.arpa. (42)
+12:45:42.331805 IP multiplay.bsnl.in.domain > varun-IdeaPad-5-15ITL05.36327: 54203 NXDomain 0/1/0 (119)
+
+TCP Filter
+-------------
+
+12:46:37.156583 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [P.], seq 754673568:754673662, ack 3261920147, win 655, options [nop,nop,TS val 103470719 ecr 1709836878], length 94
+12:46:37.156585 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [P.], seq 94:188, ack 1, win 655, options [nop,nop,TS val 103470722 ecr 1709836878], length 94
+12:46:37.156585 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [P.], seq 188:282, ack 1, win 655, options [nop,nop,TS val 103470723 ecr 1709836878], length 94
+12:46:37.156586 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [P.], seq 282:376, ack 1, win 655, options [nop,nop,TS val 103470724 ecr 1709836878], length 94
+12:46:37.156823 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [.], ack 376, win 855, options [nop,nop,TS val 1709847324 ecr 103470719], length 0
+12:46:37.169875 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [P.], seq 1:82, ack 376, win 855, options [nop,nop,TS val 1709847337 ecr 103470719], length 81
+12:46:37.172653 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [P.], seq 82:244, ack 376, win 855, options [nop,nop,TS val 1709847340 ecr 103470719], length 162
+12:46:37.232134 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [P.], seq 244:325, ack 376, win 855, options [nop,nop,TS val 1709847400 ecr 103470719], length 81
+12:46:37.315181 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [.], ack 82, win 655, options [nop,nop,TS val 103470964 ecr 1709847337], length 0
+12:46:37.315183 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [.], ack 244, win 666, options [nop,nop,TS val 103470964 ecr 1709847340], length 0
+12:46:37.315183 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [.], ack 325, win 666, options [nop,nop,TS val 103470964 ecr 1709847400], length 0
+12:46:38.576179 IP varun-IdeaPad-5-15ITL05.55962 > 104.18.32.47.https: Flags [.], ack 2038630944, win 477, options [nop,nop,TS val 3492262820 ecr 1892160717], length 0
+12:46:38.608079 IP 104.18.32.47.https > varun-IdeaPad-5-15ITL05.55962: Flags [.], ack 1, win 11, options [nop,nop,TS val 1892205781 ecr 3492078625], length 0
+12:46:54.409950 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [P.], seq 325:395, ack 376, win 855, options [nop,nop,TS val 1709864577 ecr 103470964], length 70
+12:46:54.433745 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [.], ack 395, win 666, options [nop,nop,TS val 103488083 ecr 1709864577], length 0
+12:46:54.656164 IP whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client > varun-IdeaPad-5-15ITL05.46262: Flags [P.], seq 376:448, ack 395, win 666, options [nop,nop,TS val 103488305 ecr 1709864577], length 72
+12:46:54.697161 IP varun-IdeaPad-5-15ITL05.46262 > whatsapp-cdn-shv-01-tir3.fbcdn.net.xmpp-client: Flags [.], ack 448, win 855, options [nop,nop,TS val 1709864865 ecr 103488305], length 0
+12:46:55.003154 IP varun-IdeaPad-5-15ITL05.44286 > sd-in-f188.1e100.net.https: Flags [.], ack 4234133727, win 439, options [nop,nop,TS val 3705216857 ecr 3452575877], length 0
+12:46:55.055496 IP sd-in-f188.1e100.net.https > varun-IdeaPad-5-15ITL05.44286: Flags [.], ack 1, win 1043, options [nop,nop,TS val 3452620928 ecr 3704673070], length 0
+
