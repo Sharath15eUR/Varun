@@ -1,0 +1,26 @@
+What Happens in a Network Due to Duplicate IPs?
+
+1. Network Disruption: Both devices may lose connectivity.
+2. Intermittent Connectivity: The devices may take turns connecting and disconnecting.
+3. Packet Loss: Data packets may not reach the intended device.
+4. Security Risk: One device could impersonate the other, which might cause unauthorized access.
+
+
+When two devices are configured with the same IP address in a network, IP address conflict occurs. This causes both devices to malfunction because the network cannot identify which device owns that IP address.
+
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_1$ arping -I wlp0s20f3 192.168.1.10
+ARPING 192.168.1.10 from 192.168.1.3 wlp0s20f3
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  22.997ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  350.042ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  388.668ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  199.187ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  523.190ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  250.255ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  67.686ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  392.181ms
+Unicast reply from 192.168.1.10 [92:BC:E4:5A:DA:FD]  209.440ms
+^CSent 12 probes (4 broadcast(s))
+Received 9 response(s)
+
+If duplicate IPs are present, more than one MAC address would be found ([92:BC:E4:5A:DA:FD])
