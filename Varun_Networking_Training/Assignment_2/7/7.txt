@@ -1,0 +1,30 @@
+Findings and Observations
+--------------------------
+
+1. Bridge Creation:
+-------------------------
+The command "sudo ip link add name br0 type bridge" creates a virtual network bridge interface named br0. This interface works as a Layer 2 switch, which connects multiple network interfaces at the data link layer (MAC layer) to forward Ethernet frames between them.
+
+2. Assign Interface to Bridge:
+--------------------------------
+The command "sudo ip link set dev wlp0s20f3 master br0" attempts to assign the wireless interface wlp0s20f3 to the bridge. However, Linux does not allow wireless interfaces to be enslaved directly to a bridge due to protocol limitations of Wi-Fi networks, which are not fully compatible with Layer 2 bridging.
+
+3. MAC Address Table (FDB) Observation:
+------------------------------------------
+The command bridge fdb show displays the Forwarding Database (FDB), which holds the MAC addresses learned by the bridge. The table contains:
+	- Multicast addresses (starting with 01:00:5e and 33:33), which are permanent entries used for group communications.
+	- These addresses indicate that the bridge is aware of certain multicast groups on the network.
+	
+4. Bridge Functionality:
+---------------------------
+A Layer 2 switch forwards Ethernet frames based on MAC addresses. The bridge dynamically learns MAC addresses from incoming frames and stores them in the FDB.
+
+If the destination MAC address is known, the frame is forwarded to the specific interface.
+
+If the address is unknown, the frame is flooded to all interfaces except the one it was received from.
+
+5. Bridge Removal:
+---------------------------
+The bridge interface was deleted using the command "sudo ip link delete br0 type bridge". This removes the virtual bridge and clears all its associated configurations.
+
+The "ip link show" command confirms the deletion by no longer displaying the br0 interface.
