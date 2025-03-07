@@ -1,0 +1,81 @@
+Static IP Configuration
+-----------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2/3$ sudo ifconfig wlp0s20f3 down
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2/3$ sudo ifconfig wlp0s20f3 192.168.1.100 netmask 255.255.255.0 up
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2/3$ sudo route add default gw 192.168.1.1 wlp0s20f3
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2/3$ ifconfig wlp0s20f3
+
+wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.100  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::75c4:c747:9aee:caea  prefixlen 64  scopeid 0x20<link>
+        ether dc:21:5c:86:05:01  txqueuelen 1000  (Ethernet)
+        RX packets 512476  bytes 634180568 (634.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 68675  bytes 18134601 (18.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2/3$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=13.1 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=8.43 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=161 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=8.75 ms
+64 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=37.8 ms
+64 bytes from 192.168.1.1: icmp_seq=6 ttl=64 time=10.5 ms
+64 bytes from 192.168.1.1: icmp_seq=7 ttl=64 time=12.5 ms
+64 bytes from 192.168.1.1: icmp_seq=8 ttl=64 time=9.25 ms
+64 bytes from 192.168.1.1: icmp_seq=9 ttl=64 time=8.88 ms
+64 bytes from 192.168.1.1: icmp_seq=10 ttl=64 time=10.7 ms
+^C
+--- 192.168.1.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9010ms
+rtt min/avg/max/mdev = 8.426/28.091/160.990/45.079 ms
+
+
+
+Modifying MAC address
+------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ifconfig wlp0s20f3
+wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.8  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::8d28:ccb0:9057:48e8  prefixlen 64  scopeid 0x20<link>
+        ether dc:21:5c:86:05:01  txqueuelen 1000  (Ethernet)
+        RX packets 113976  bytes 140791350 (140.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24168  bytes 7851226 (7.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+The MAC address given already is dc:21:5c:86:05:01 
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ifconfig wlp0s20f3 down 
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ifconfig wlp0s20f3 hw ether dc:21:5c:11:22:33
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ifconfig wlp0s20f3 up
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ifconfig wlp0s20f3
+wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.8  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::5453:b8c9:402a:adb6  prefixlen 64  scopeid 0x20<link>
+        ether dc:21:5c:11:22:33  txqueuelen 1000  (Ethernet)
+        RX packets 114248  bytes 140895941 (140.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24438  bytes 7953675 (7.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+After downing the existing device, we changed the MAC address to dc:21:5c:11:22:33 and then upped the device and checked the MAC address.
+
+Verification of connection
+-------------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ping -c 5 google.com
+PING google.com (142.250.205.238) 56(84) bytes of data.
+64 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=1 ttl=117 time=25.7 ms
+64 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=2 ttl=117 time=23.8 ms
+64 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=3 ttl=117 time=24.0 ms
+64 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=4 ttl=117 time=24.0 ms
+64 bytes from maa05s28-in-f14.1e100.net (142.250.205.238): icmp_seq=5 ttl=117 time=22.9 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 22.920/24.086/25.743/0.919 ms
