@@ -1,0 +1,54 @@
+Steps to Configure a Basic LAN Using ip Command
+
+1. Check all available network interfaces
+-----------------------------------------------
+	Before configuring the network, it is essential to identify available interfaces and their status. This helps determine which interface needs an IP address and if it's already active.
+
+2. Assign an IP address to the interface
+-----------------------------------------------
+	An IP address is assigned to a specific network interface to allow communication within the network. The subnet mask defines the network range, ensuring proper routing of packets.
+
+3. Enable the interface
+-----------------------------------------------
+	A network interface must be activated before it can send or receive data. If an interface is down, it cannot communicate, even if it has a valid IP address.
+
+4. Configure default gateway
+-----------------------------------------------
+	The default gateway is the router that forwards traffic destined for external networks. Setting it correctly ensures proper internet and external network access.
+
+5. Check connectivity
+------------------------------------------------
+	Testing connectivity verifies that the network is configured correctly. A successful ping confirms that the device can communicate with other hosts and access external networks.
+
+
+Commands and output
+------------------------
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether dc:21:5c:86:05:01 brd ff:ff:ff:ff:ff:ff
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ip addr add 192.168.1.100/24 dev wlp0s20f3
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ip link set wlp0s20f3 up
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ sudo ip route add default via 192.168.1.1
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ping -c 4 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=58 time=25.7 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=58 time=28.5 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=58 time=23.0 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=58 time=26.2 ms
+
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 22.971/25.845/28.493/1.962 ms
+
+varun@varun-IdeaPad-5-15ITL05:~/EmbedUR/Varun_Networking_Training/Assignment_2$ ip route show
+default via 192.168.1.1 dev wlp0s20f3 
+default via 192.168.1.1 dev wlp0s20f3 proto dhcp metric 600 
+169.254.0.0/16 dev wlp0s20f3 scope link metric 1000 
+192.168.1.0/24 dev wlp0s20f3 proto kernel scope link src 192.168.1.8 metric 600 

@@ -1,0 +1,28 @@
+Linux handles Ethernet communication through network interfaces, the networking stack, and device drivers, ensuring efficient packet transmission and reception.
+
+Transmission Process
+----------------------------
+
+1. User-Space to Kernel: Applications send data via sockets (send(), sendto(), sendmsg()).
+2. Transport Layer: TCP segments data into packets with headers (source/destination ports,sequence number,checksum). UDP does similar processing but without connection establishment.
+3. Network Layer (IP Layer): The IP header is added, containing source/destination addresses and protocol type. Routing decisions are made based on the destination IP.
+4. Link Layer (Ethernet Layer): The Ethernet frame is created with MAC addresses and an EtherType field.
+5. Driver and NIC: The network driver transfers the frame to the NIC via DMA, and the NIC sends it over the network.
+
+Reception Process
+----------------------------
+
+1. NIC Receives Data: Incoming frames are stored in buffers.
+2. Interrupt Handling: The NIC triggers an interrupt (IRQ), alerting the kernel.
+3. Driver Processing: The network driver retrieves the frame via DMA and hands it to the networking stack.
+4. Network Layer Processing: The packet is checked for integrity, headers are verified, and routing decisions are made.
+5. Transport Layer Handling: TCP reassembles segments, checks sequence no.s, & validates checksum before delivering data. UDP performs minimal processing before forwarding.
+6. User-Space Delivery: Applications receive the data via socket buffers (recv(), recvfrom()).
+
+Additional Features
+----------------------------
+
+1. Performance Enhancements: NAPI (New API) reduces interrupt overhead by switching to polling during high traffic.
+2. Offloading Mechanisms: NICs handle checksum verification, TCP segmentation, and packet aggregation to reduce CPU load.
+3. Networking Features: Linux supports VLANs, network bridging, tunneling (VXLAN, GRE), and packet filtering via iptables and nftables.
+4. These mechanisms ensure efficient, secure, and scalable Ethernet networking in Linux
