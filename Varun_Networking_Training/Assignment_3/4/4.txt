@@ -1,0 +1,29 @@
+DHCP Process
+---------------------
+
+The Dynamic Host Configuration Protocol (DHCP) automatically assigns IP addresses and network settings to devices. It follows these four steps:
+
+1.  Discovery (DHCPDISCOVER)
+---------------------------------
+- The client sends a broadcast request (0.0.0.0 → 255.255.255.255) to find DHCP servers.
+- Uses UDP port 68 (Client) → 67 (Server).
+
+2. Offer (DHCPOFFER)
+---------------------------------
+- A DHCP server responds with an available IP address, subnet mask, gateway, and lease time.
+- Sent to the client’s MAC address.
+
+3. Request (DHCPREQUEST)
+---------------------------------
+- The client accepts one offer and requests the assigned IP.
+- Broadcasted to inform all DHCP servers.
+
+4. Acknowledge (DHCPACK)
+---------------------------------
+- The server confirms the lease, finalizing the client’s network settings.
+- The client can now communicate on the network.
+
+Renewal & Expiry
+------------------------
+- Lease Renewal: Before expiry, the client sends a DHCPREQUEST to extend the lease.
+- Rebinding: If the original server is unresponsive, the client asks another DHCP server.
