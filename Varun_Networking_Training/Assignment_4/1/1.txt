@@ -1,0 +1,15 @@
+Importance of ARP in Packet Forwarding
+----------------------------------------------
+
+ARP (Address Resolution Protocol) is crucial because it translates IP addresses into MAC addresses. Devices need MAC addresses to send data within a local network.
+
+When a device wants to send a packet:
+
+1. It knows the destination IP address.
+2. It uses ARP to find the corresponding MAC address.
+3. The packet is then delivered using that MAC address.
+4. Without ARP, devices wouldn’t know where to send packets on a LAN.
+5. It also helps forward packets to the default gateway (router) when sending data outside the network.
+
+Basically the 00:00:00:00:00:00 is a broadcast IP where all the devices are sent a request signal to check which device (MAC Address) is connected to the particular IP.
+Depending on the reply, the particular device is shown with its MAC address. 
