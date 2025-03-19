@@ -1,0 +1,19 @@
+
++----------------+---------+---------------+---------------------------------------------------------------+
+|   IP Address   |  Class  | Private/Public|                           Reason                              |
++----------------+---------+---------------+---------------------------------------------------------------+
+| 192.168.10.5   | Class C |   Private     | Falls within 192.168.0.0 – 192.168.255.255 (Private IP range  |
++----------------+---------+---------------+---------------------------------------------------------------+
+| 172.20.15.1    | Class B |   Private     | Falls within 172.16.0.0 – 172.31.255.255 (Private IP range)   |
++----------------+---------+---------------+---------------------------------------------------------------+
+| 8.8.8.8        | Class A |   Public      | Google Public DNS, outside private IP ranges                  |
++----------------+---------+---------------+---------------------------------------------------------------+
+
+How NAT handles private IPs when accessing the Internet
+---------------------------------------------------------
+
+NAT (Network Address Translation) converts private IP addresses (non-routable) to a public IP address.
+
+--- It maintains a mapping table to keep track of which private IP and port corresponds to which public IP and port.
+--- This allows devices with private IPs to communicate on the Internet using the router’s public IP.
+--- Responses from the internet are translated back to the appropriate private IP.
