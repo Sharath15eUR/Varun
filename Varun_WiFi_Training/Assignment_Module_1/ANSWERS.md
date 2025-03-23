@@ -108,6 +108,9 @@ The observations in general between 2.4 GHz and 5GHz is
 | **Bandwidth**   | Narrower channels (20/40 MHz) | Wider channels (up to 160 MHz) |
 | **Device Compatibility** | Supported by almost all devices | Only newer devices support it |
 
+![Image](https://github.com/user-attachments/assets/a1a202ca-972f-42d0-8029-3d7d9496ff07)
+
+![Image](https://github.com/user-attachments/assets/79799976-d777-4eea-a1b5-df2692c144d3)
 
 ## 8. What is the difference between IEEE and WFA
 
@@ -152,6 +155,8 @@ Wi-Fi networks use backhaul connections to link access points (APs) to the inter
   - Cellular (4G/5G) – Used in mobile hotspots or fixed wireless access (FWA).
   - Satellite (e.g., Starlink) – Used in remote locations, but higher latency.
   - Wi-Fi Mesh or Point-to-Point Wi-Fi – Uses Wi-Fi signals for backhaul between nodes.
+
+![Image](https://github.com/user-attachments/assets/581ccab8-46f9-4f17-82b0-9437272df857)
 
 ## 10. List down the Wi-Fi topologies and use cases of each one. 
 
@@ -199,4 +204,6 @@ Wi-Fi networks use backhaul connections to link access points (APs) to the inter
 **Use Cases:**  
 - Wireless printing and file sharing.  
 - Gaming console connectivity.  
-- IoT device pairing and communication.  
+- IoT device pairing and communication.
+
+  
