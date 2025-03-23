@@ -1,0 +1,30 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#
+Router(config)#interface GigabitEthernet0/1
+Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#
+Router(config)#no access-list 100
+Router(config)#access-list 100 deny tcp any host 192.168.20.100 eq 80
+Router(config)#access-list 100 deny tcp any host 192.168.20.100 eq 20
+Router(config)#access-list 100 deny tcp any host 192.168.20.100 eq 21
+Router(config)#access-list 100 permit ip any any
+Router(config)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip access-group 100 in
+Router(config-if)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory
+Building configuration...
+[OK]
+Router#
