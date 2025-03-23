@@ -1,0 +1,16 @@
+Switch(config)# vlan 99
+Switch(config-vlan)# name Native_VLAN
+Switch(config-vlan)# exit
+
+Switch(config)# interface fa0/24
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk native vlan 99
+Switch(config-if)# switchport trunk allowed vlan 10,20,30,99
+
+Repeat same for the second switch:
+
+Switch(config)# vlan 99
+Switch(config)# interface fa0/24
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk native vlan 99
+Switch(config-if)# switchport trunk allowed vlan 10,20,30,99
