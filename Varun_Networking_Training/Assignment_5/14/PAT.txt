@@ -1,0 +1,11 @@
+Router#configure terminal
+Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#ip nat inside source list 1 interface GigabitEthernet0/1 overload
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#exit
+Router#write memory
