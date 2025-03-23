@@ -1,0 +1,44 @@
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Varun
+Varun(config)#vlan 10
+Varun(config-vlan)#name Management
+Varun(config-vlan)#exit
+Varun(config)#interface fa0/1
+Varun(config-if)#switchport mode access
+Varun(config-if)#switchport access vlan 10
+Varun(config-if)#exit
+Varun(config)#interface vlan 10
+Varun(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+Varun(config-if)#ip address 192.168.10.1 255.255.255.0
+Varun(config-if)#no shutdown
+Varun(config-if)#exit
+Varun(config)#ip domain-name example.com
+Varun(config)#username varun privilege 15 password cisco123
+Varun(config)#crypto key generate rsa
+The name for the keys will be: Varun.example.com
+Choose the size of the key modulus in the range of 360 to 4096 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
+
+Varun(config)#ip ssh version 2
+*Mar 1 0:3:41.826: %SSH-5-ENABLED: SSH 1.99 has been enabled
+Varun(config)#line vty 0 4
+Varun(config-line)#login local
+Varun(config-line)#transport input ssh
+Varun(config-line)#exit
+Varun(config)#exit
+Varun#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory
+Building configuration...
+[OK]
+Varun#
