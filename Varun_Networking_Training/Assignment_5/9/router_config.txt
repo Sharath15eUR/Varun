@@ -1,0 +1,22 @@
+Router> enable
+Router# configure terminal
+Router#
+Router(config)# interface fastEthernet 0/0.10
+Router(config-subif)# encapsulation dot1Q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# no shutdown
+Router(config-subif)# exit
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)# interface fastEthernet 0/0.20
+Router(config-subif)# encapsulation dot1Q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+Router(config-subif)# no shutdown
+Router(config-subif)# exit
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)# interface fastEthernet 0/0
+Router(config-if)# no shutdown
+Router(config-if)# exit
