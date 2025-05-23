@@ -1,0 +1,99 @@
+1. Child Process – fork()
+
+* fork() is a system call used in Linux systems to create a new process. This new process is called the child, and the original is the parent.
+
+* The child process gets a copy of the parent's memory and code.
+* After fork(), both parent and child execute from the next line.
+* Return values:
+
+	  * 0 : in child process
+	  * >0 (PID of child) : in parent
+	  * <0 : error in creating process
+
+
+* Used in shells to run commands.
+* Used before exec() to load a new program in the child.
+
+2. Handling Common Signals
+
+
+| Signal    | Meaning            |
+| --------- | ------------------ |
+| `SIGINT`  | Ctrl+C, interrupt  |
+| `SIGTERM` | Terminate request  |
+| `SIGSEGV` | Segmentation fault |
+| `SIGKILL` | Kill immediately   |
+
+Handling Signals:
+
+- You can catch signals using `signal()` or `sigaction()`:
+
+	void handler(int signum) {
+	    printf("Caught signal %d\n", signum);
+	}
+	signal(SIGINT, handler);
+
+- Some signals like `SIGKILL` cannot be caught or ignored.
+
+
+3. Exploring Kernel Crashes
+
+- A Kernel crash (or panic) occurs when the operating system's core (the kernel) hits an unrecoverable error.
+
+Causes:
+* NULL pointer dereference in kernel space
+* Invalid memory access
+* Stack overflow in kernel thread
+* Race conditions or deadlocks
+
+Solution Tools:
+
+* dmesg – view kernel logs
+* journalctl -k – logs from kernel
+* crash dumps – analyze post-mortem with tools like crash
+
+- A crash in user space affects just the app but a kernel crash can reboot the whole system.
+
+
+4. Time Complexity
+
+- Time complexity describes how the execution time of an algorithm grows with the input size `n`.
+- Helps estimate the performance of your code for **large input sizes**, independent of hardware.
+
+| Big-O      | Description                   |
+| ---------- | ----------------------------- |
+| O(1)       | Constant time                 |
+| O(log n)   | Logarithmic (binary search)   |
+| O(n)       | Linear (single loop)          |
+| O(n log n) | Merge sort, efficient sorting |
+| O(n²)      | Nested loops (bubble sort)    |
+
+
+5. Locking Mechanisms – mutex vs spinlock
+
+- Used in multi-threaded programs to protect shared data and avoid race conditions.
+
+a. mutex (Mutual Exclusion):
+	- A thread locks the mutex before entering a critical section.
+	- If another thread tries to lock it, it sleeps (blocks).
+	- When done, the thread unlocks it.
+
+		pthread_mutex_lock(&lock);
+			// critical section
+		pthread_mutex_unlock(&lock);
+b. spinlock:
+
+- Similar to mutex, but instead of sleeping, threads keep checking in a loop until the lock is free.
+
+	while (__sync_lock_test_and_set(&lock, 1)) {
+	    // spinning (busy wait)
+	}
+
+
+| Feature       | mutex                  | spinlock                |
+| ------------- | ---------------------- | ----------------------- |
+| Wait behavior | Sleeps if locked       | Busy-waits (spins)      |
+| CPU usage     | Low                    | High during contention  |
+| Use case      | User-space, long wait  | Kernel, short wait      |
+| Performance   | Better with long tasks | Faster with quick tasks |
+
