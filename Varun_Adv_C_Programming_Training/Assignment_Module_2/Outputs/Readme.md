@@ -1,1 +1,1 @@
-This folder contains the output of the assignment of module 2. 
+This folder contains the output of the coding problems of assignment in module 2. 
